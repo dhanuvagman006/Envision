@@ -1,29 +1,25 @@
 <script>
-export default{
-setup(){
-  const name="Dhanush";
-  const status="active";
-  const tasks=['hello',"Drink","Water"];
-  const togglests=()=>{
-    if(this.status==='active'){
-        this.status='pending';
-      }else if(this.status==='pending'){
-        this.status='active'
-      }
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const name = ref("Dhanush");
+    const college = ref("Srinivas Institute of Technology");
+    const identifier = ref("nigiga");
+    const nigganame="Nikshith";
+    const text="";
+
+    return { name, college, identifier,nigganame,text};
   }
-  return {name,status,tasks,togglests};
-}
 };
 </script>
 
 <template>
   <h1>{{ name }}</h1>
-  <h2 v-if="status==='active'">User is ALive</h2>
-  <h2 v-else-if="status==='pending'">User is half dead</h2>
-  <h2 v-else>User is Dead</h2><br>
-  <h3>Task Lists:</h3>
-  <p v-for="task in tasks":key='task'>{{ task }}</p>
-  <p v-for="sk in skills":key='sk'>{{ sk }}</p>
-
-   <button @click="togglests">Click me to Bring User Back Live!</button>
+  <br />
+  <h2>{{ college }}</h2>
+  <div v-if="identifier === 'Maniga'">
+    <br>
+    <h1>{{ nigganame}} is Nigga,alwa magaa?</h1>
+  </div>
 </template>
