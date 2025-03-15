@@ -1,19 +1,24 @@
 <script>
 export default{
-setup(){
-  const name="Dhanush";
-  const status="active";
-  const tasks=['hello',"Drink","Water"];
-  const togglests=()=>{
-    if(this.status==='active'){
+  data(){
+    return{
+      name:"Yeah I Did It!",
+      status:'pending',
+      tasks:["Hello","World"],
+      skills:["Python","CPP","Vue","JS"],
+      link:"https://www.google.com"
+    }
+  },
+  methods:{
+    togglests(){
+      if(this.status==='active'){
         this.status='pending';
       }else if(this.status==='pending'){
         this.status='active'
       }
+    }
   }
-  return {name,status,tasks,togglests};
 }
-};
 </script>
 
 <template>
@@ -24,6 +29,6 @@ setup(){
   <h3>Task Lists:</h3>
   <p v-for="task in tasks":key='task'>{{ task }}</p>
   <p v-for="sk in skills":key='sk'>{{ sk }}</p>
-
+  <a :href="link">Click For Google</a>
    <button @click="togglests">Click me to Bring User Back Live!</button>
 </template>
